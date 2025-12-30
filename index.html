@@ -17,7 +17,7 @@
 <body>
   <header class="header">
     <div class="header-top">
-      <div class="header-wrap container">
+      <div class="header-wrap container section-padding">
         <div class="header-top-info">
           <ul class="header-list">
             <li class="header-item">
@@ -59,11 +59,11 @@
     </div>
     <!-- /.header-top -->
     <div class="header-bottom">
-      <div class="header-wrap container">
+      <div class="header-wrap container section-padding">
         <a href="./" class="header-logo">
-          <img src="img/logo.svg" width="116" height="23" alt="Логотип компании Kugoo">
+          <img src="img/logo.svg" class="logo" width="116" height="23" alt="Логотип компании Kugoo">
         </a>
-        <div class="catalog-btn">
+        <div class="header-catalog catalog">
           <div class="burger">
             <span class="burger-line"></span>
             <span class="burger-line"></span>
@@ -71,7 +71,7 @@
           </div>
           <span>Каталог</span>
         </div>
-        <div class="search-box">
+        <div class="header-search search">
           <input type="text" class="search-input" placeholder="Искать самокат KUGO">
           <button class="search-btn">
             <svg width="16" height="16">
@@ -79,8 +79,8 @@
             </svg>
           </button>
         </div>
-        <div class="group-btn">
-          <a href="#" class="group-link">
+        <div class="header-group-btn group-btn">
+          <a href="#" class="group-btn-link">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <mask id="path-1-inside-1_1_15994" fill="white">
                 <path
@@ -94,12 +94,12 @@
                 fill="#282739" mask="url(#path-1-inside-1_1_15994)" />
             </svg>
           </a>
-          <a href="#" class="group-link">
+          <a href="#" class="group-btn-link">
             <svg width="20" height="20">
               <use href="img/sprite.svg#heart"></use>
             </svg>
           </a>
-          <a href="#" class="group-link">
+          <a href="#" class="group-btn-link">
             <svg width="20" height="20">
               <use href="img/sprite.svg#cart"></use>
             </svg>
@@ -115,13 +115,12 @@
   <main>
     <section class="hero">
       <div class="container hero-wrap">
-        <!-- <picture class="hero-img">
-          <source type="image/webp" srcset="img/hero.wepb">
+        <picture class="hero-picture">
+          <source type="image/webp" srcset="img/hero.webp">
           <source type="image/jpeg" srcset="img/hero.jpg">
-          <img src="img/hero.jpg" width="1380" height="445" alt="">
-        </picture> -->
-        <img class="hero-img" src="img/hero.jpg" width="1380" height="445" alt="">
-        <!-- посомтреть как скрыть от дискрипторов -->
+          <img src="img/hero.jpg" class="hero-img" width="1380" height="445" alt="Девушка на электросамокате">
+        </picture>
+        <!-- посомтреть как скрыть от дискрипторов описание в alt-->
         <div class="hero-content">
           <ul class="hero-info">
             <li class="hero-info-item">
@@ -134,7 +133,7 @@
             </li>
             <li class="hero-info-item">Вт - Сб 10:00 - 20:00</li>
           </ul>
-          <h1 class="hero-title">Запишитесь на бесплатный тест-драйв электросамокатов</h1>
+          <h1 class="hero-title">Запишитесь на&nbsp;бесплатный тест-&#8288;драйв электросамокатов</h1>
           <p class="hero-text">в Москве без ограничения по времени</p>
           <ul class="hero-benefits">
             <li class="hero-benefits-item">
@@ -151,7 +150,7 @@
                   <use href="img/sprite.svg#energy"></use>
                 </svg>
               </div>
-              <p class="hero-benefits-text">Проверите лучшие самокаты в деле</p>
+              <p class="hero-benefits-text">Проверите лучшие самокаты в&nbsp;деле</p>
             </li>
           </ul>
           <button class="btn btn-white hero-btn">Записаться</button>
