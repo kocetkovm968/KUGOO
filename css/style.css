@@ -73,6 +73,11 @@ button {
   background-color: #ffffff;
 }
 
+.btn-primary {
+  color: #ffffff;
+  background-color: #6f73ee;
+}
+
 
 /* ============================================= */
 /* header */
@@ -221,6 +226,14 @@ button {
   color: #282739;
 }
 
+/* .group-btn-heart {
+  fill: #282739;
+} */
+
+/* 
+<symbol viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="heart">
+    <path d="M17.9935 5.51496C17.7329 4.90541 17.357 4.35303 16.887 3.88876C16.4167 3.4231 15.8621 3.05305 15.2535 2.79873C14.6224 2.53397 13.9455 2.39845 13.2622 2.40004C12.3034 2.40004 11.3681 2.66518 10.5552 3.166C10.3607 3.28581 10.176 3.4174 10.001 3.56077C9.82594 3.4174 9.6412 3.28581 9.44673 3.166C8.63386 2.66518 7.69847 2.40004 6.73975 2.40004C6.0494 2.40004 5.38043 2.53359 4.74841 2.79873C4.13779 3.05405 3.58745 3.42132 3.11489 3.88876C2.64428 4.35251 2.26834 4.90501 2.00838 5.51496C1.73807 6.14934 1.6 6.823 1.6 7.51629C1.6 8.17031 1.73224 8.85182 1.99477 9.54512C2.21451 10.1245 2.52955 10.7255 2.9321 11.3324C3.56995 12.2928 4.44699 13.2944 5.536 14.3098C7.34066 15.993 9.1278 17.1557 9.20365 17.2028L9.66453 17.5013C9.86872 17.6329 10.1313 17.6329 10.3354 17.5013L10.7963 17.2028C10.8722 17.1537 12.6574 15.993 14.464 14.3098C15.553 13.2944 16.43 12.2928 17.0679 11.3324C17.4704 10.7255 17.7874 10.1245 18.0052 9.54512C18.2677 8.85182 18.4 8.17031 18.4 7.51629C18.4019 6.823 18.2639 6.14934 17.9935 5.51496ZM10.001 15.9478C10.001 15.9478 3.07795 11.4679 3.07795 7.51629C3.07795 5.51496 4.7173 3.89269 6.73975 3.89269C8.1613 3.89269 9.39422 4.69401 10.001 5.86456C10.6077 4.69401 11.8406 3.89269 13.2622 3.89269C15.2846 3.89269 16.924 5.51496 16.924 7.51629C16.924 11.4679 10.001 15.9478 10.001 15.9478Z" fill="#282739" />
+  </symbol> */
 
 
 /* ============================================= */
@@ -397,6 +410,166 @@ button {
 }
 
 
+
+/* ============================================= */
+/* section products */
+/* ============================================= */
+.products {
+  display: flex;
+}
+
+.products-cards {
+  display: flex;
+}
+
+.products-title {
+  margin-bottom: 50px;
+  max-width: 732px;
+  font-weight: 600;
+  font-size: 35px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.products-card {
+  width: 255px;
+  border: 1.50px solid #eaebed;
+  border-radius: 10px;
+}
+
+.products-card-top {
+  position: relative;
+  height: 231px;
+}
+
+.products-card-pic,
+.products-card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+
+.badge-hit,
+.bage-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+}
+
+.badge-hit {
+  padding: 4px 9px;
+  background-color: #ee685f;
+}
+
+.badge-new {
+  padding: 4px 7px;
+  background-color: #75d14a;
+}
+
+.badge-balance {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.badge-balance-icon {
+  fill: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.products-card-bottom {
+  padding: 20px 25px 20px 24px;
+}
+
+.products-card-title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.products-card-features {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.features-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features-item-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #5d6c7b;
+}
+
+.products-card-wrap {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.products-card-price-block {
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+
+.products-card-old-price {
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: line-through;
+  color: #5d6c7b;
+}
+
+.products-card-price {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.products-card-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.30px solid #eaebed;
+}
+
+.products-card-btn:first-of-type {
+  margin-right: 10px;
+}
+
+.products-card-heart {
+  fill: #6F73EE;
+}
+
+.products-card-button {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 12px;
+}
 
 
 
