@@ -10,6 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital@0;1&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Тест-драйв электросамокатов Kugoo</title>
 </head>
@@ -579,36 +580,25 @@
 
     <section class="cta">
       <div class="container">
-        <div class="bg-grey cta-section section-padding">
+        <div class="bg-grey cta-section">
           <form action="" method="" class="cta-form">
             <h2 class="cta-title">Нет нужной модели, которую хотите протестировать?</h2>
             <p class="cta-text">Оставьте заявку, и менеджер подберет нужный самокат</p>
             <div class="cta-input-btn-wrap">
-              <div class="cta-input-group">
+              <div class="cta-input-group input-group">
                 <label for="user-phone"></label>
-                  <input 
-                  class="input cta-input" 
-                  id="user-phone" 
-                  name="userphone" 
-                  type="tel"
-                  placeholder="+7 (___) __ - __ - __"
-                >
+                <input class="input cta-input" id="user-phone" name="userphone" type="tel"
+                  placeholder="+7 (___) __ - __ - __">
               </div>
               <button class="btn-primary cta-button">Оставить заявку на тест-драйв</button>
             </div>
             <div class="cta-policy">
-              <label for="accept">
-                <input 
-                type="checkbox" 
-                class="accept"
-                id="accept"
-                name="accept"
-                checked
-                required
-                >
+              <label for="accept" class="accept-label">
+                <input type="checkbox" class="accept" id="accept" name="accept" checked required>
               </label>
               <p class="cta-policy-text">
-                Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и <a href="#" class="cta-policy-link">политикой конфиденциальности</a>
+                Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и <a href="#"
+                  class="cta-policy-link">политикой конфиденциальности</a>
               </p>
             </div>
           </form>
@@ -621,10 +611,28 @@
       </div>
     </section>
     <!-- /.cta -->
+
+    <section class="cta-discount">
+      <div class="cta-discount_content container section-padding">
+        <h2 class="cta-discount_title">Оставьте свою почту и станьте первым, кто получит скидку на новые самокаты</h2>
+        <div class="cta-discount-group input-group">
+          <label for="user-mail"></label>
+          <input 
+            class="input cta-discount-input" 
+            id="user-mail" 
+            name="usermail" 
+            type="mail"
+            placeholder="Введите Ваш email">
+        </div>
+        <button class="btn btn-white cta-discount-btn">Подписаться</button>
+      </div>
+    </section>
+    <!-- /.cta-discount -->
   </main>
 
   <footer></footer>
 
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
