@@ -133,14 +133,17 @@ button {
   padding-top: 1.8125rem;
 }
 
-.header-logo {
+.logo {
   flex-shrink: 0;
-  margin-right: 2.1875rem;
   width: 7.25rem;
   height: 1.4375rem;
 }
 
-.logo {
+.header-logo {
+  margin-right: 2.1875rem;
+}
+
+.logo_img {
   height: auto;
 }
 
@@ -759,13 +762,13 @@ button {
 /* ============================================= */
 .footer {
   padding-top: 46px;
-  padding-bottom: 21px;
+  padding-bottom: 18px;
   background-color: #f4f7fb;
 }
 
 .footer_top {
   display: flex;
-  padding-bottom: 75px;
+  padding-bottom: 76px;
 }
 
 .footer_catalog {
@@ -776,14 +779,11 @@ button {
   margin-right: 110px;
 }
 
-.footer_contacts {
-  margin-right: 75px;
-}
-
 .footer-subtitle {
-  margin-bottom: 17px;
+  margin-bottom: 19px;
   font-weight: 500;
   font-size: 18px;
+  line-height: 145%;
 }
 
 .footer_buyers-column {
@@ -796,11 +796,118 @@ button {
 }
 
 .footer_column-item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .footer_column-link {
   color: #5d6c7b;
+}
+
+.footer_contacts-column {
+  display: flex;
+  gap: 40px;
+}
+
+.footer_contacts-item {
+  font-size: 12px;
+}
+
+.footer_contacts-item:first-child {
+  margin-bottom: 5px;
+}
+
+.footer_contacts-item:last-child {
+  color: #5d6c7b;
+}
+
+.footer_contacts-phone {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 145%;
+}
+
+.footer_contacts-link {
+  color: #282739;
+}
+
+.footer_order-btn {
+  display: block;
+  margin-left: auto;
+  padding-top: 7px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #6f73ee;
+}
+
+.footer_middle {
+  display: flex;
+  align-items: center;
+  padding-top: 36px;
+  padding-bottom: 33px;
+  border-top: 1px solid rgba(93, 108, 123, 0.15);
+  border-bottom: 1px solid rgba(93, 108, 123, 0.15);
+}
+
+.footer_logo {
+  margin-right: 59px;
+}
+
+.footer_downloads {
+  display: flex;
+  gap: 10px;
+}
+
+.footer_social-group {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.footer_downloads-img,
+.footer_social-img {
+  border-radius: 5px;
+}
+
+.footer_bottom {
+  display: flex;
+  align-items: center;
+  padding-top: 17px;
+}
+
+.footer_requisites,
+.footer_policy {
+  display: block;
+  font-size: 12px;
+  color: #5d6c7b;
+}
+
+.footer_requisites {
+  margin-right: 44px;
+}
+
+.footer_policy {
+  margin-right: auto;
+}
+
+.footer_payment {
+  display: flex;
+  gap: 5px;
+  margin-right: 37px;
+}
+
+.footer_messenger-group {
+  display: flex;
+  gap: 15px;
+}
+
+.footer_messenger-text {
+  font-size: 14px;
+}
+
+.footer_messenger {
+  display: flex;
+  gap: 14px;
 }
 
 
