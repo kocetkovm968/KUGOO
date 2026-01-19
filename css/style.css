@@ -431,13 +431,20 @@ button {
   text-align: center;
 }
 
+.products-slider {
+  /* width: 100%; */
+  /* max-width: 1110px; */
+}
+
 .products-cards {
   display: flex;
+  /* justify-content: center; */
   gap: 30px;
 }
 
 .products-card {
-  width: 255px;
+  max-width: 255px;
+  width: 100%;
   border: 1.50px solid #eaebed;
   border-radius: 10px;
 }
@@ -586,7 +593,7 @@ button {
 /* section cta */
 /* ============================================= */
 .cta {
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
   padding-top: 49px;
 }
 
@@ -597,6 +604,7 @@ button {
 .cta-section {
   position: relative;
   padding-left: 8.4375rem;
+  padding-right: 8.4375rem;
   padding-top: 88px;
   padding-bottom: 78px;
   border-radius: 10px;
@@ -641,7 +649,7 @@ button {
   height: 100%;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   outline: none;
 }
 
@@ -654,7 +662,7 @@ button {
 .cta-button {
   padding: 15px 25px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .cta-policy {
@@ -718,17 +726,17 @@ button {
 .cta-discount {
   padding-top: 23px;
   padding-bottom: 21px;
-  max-width: 1440px;
   background-color: #6f73ee;
 }
 
 .cta-discount_content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 10px;
 }
 
 .cta-discount_title {
-  margin-right: 95px;
   max-width: 445px;
   font-weight: 600;
   font-size: 18px;
@@ -737,8 +745,14 @@ button {
   color: #fff;
 }
 
+.cta-discount-inner {
+  display: flex;
+  gap: 20px;
+  max-width: 570px;
+  width: 100%;
+}
+
 .cta-discount-group {
-  margin-right: 20px;
   max-width: 410px;
 }
 
@@ -948,13 +962,25 @@ button {
     gap: 50px;
   }
 
+  .cta {
+    padding-top: 0;
+  }
+
   .cta-section {
     padding-top: 50px;
     padding-bottom: 50px;
   }
 
+  .cta-title {
+    margin-bottom: 20px;
+  }
+
   .cta-picture {
     width: 30%;
+  }
+
+  .cta-discount_title {
+    font-size: 16px;
   }
 }
 
@@ -981,8 +1007,26 @@ button {
     font-size: 26px;
   }
 
+  .cta-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+  }
+
   .cta-picture {
     display: none;
+  }
+
+  .cta-discount_content {
+    flex-direction: column;
+  }
+
+  .cta-discount_title {
+    text-align: center;
   }
 }
 
@@ -1046,6 +1090,10 @@ button {
   .benefits-item:last-child {
     gap: 15px;
   }
+
+  .cta {
+    margin-bottom: 50px;
+  }
 }
 
 
@@ -1073,6 +1121,18 @@ button {
 
   .benefits-content-text {
     font-size: 16px;
+  }
+
+  .cta-section {
+    padding: 25px;
+  }
+
+  .cta-title {
+    margin-bottom: 15px;
+  }
+
+  .cta-text {
+    margin-bottom: 15px;
   }
 }
 
@@ -1122,6 +1182,44 @@ button {
   .benefits-img {
     height: auto;
   }
+
+  .cta-input-btn-wrap {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-title {
+    font-size: 23px;
+  }
+
+  .cta-text {
+    font-size: 14px;
+  }
+
+  .cta-input-group {
+    max-width: 100%;
+  }
+
+  .input-group {
+    height: 44px;
+  }
+
+  .cta-discount-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cta-discount-group {
+    max-width: 100%;
+  }
+
+  .cta-discount-btn {
+    height: 44px;
+  }
+
+  .cta-discount_title {
+    text-align: left;
+  }
 }
 
 
@@ -1163,6 +1261,18 @@ button {
     flex-direction: column;
     gap: 15px;
     margin-bottom: 20px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .cta-title {
+    font-size: 20px;
+  }
+
+  .cta-policy-text {
+    font-size: 10px;
   }
 }
 
