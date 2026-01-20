@@ -782,15 +782,25 @@ button {
 
 .footer_top {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding-bottom: 76px;
 }
 
 .footer_catalog {
-  margin-right: 125px;
+  /* margin-right: 125px; */
+  /* margin-right: 55px; */
+  margin-right: 5%;
 }
 
 .footer_buyers {
-  margin-right: 110px;
+  /* margin-right: 110px; */
+  /* margin-right: 40px; */
+  margin-right: 3.7%;
+}
+
+.footer_contacts {
+  margin-right: 10px;
 }
 
 .footer-subtitle {
@@ -847,7 +857,7 @@ button {
 
 .footer_order-btn {
   display: block;
-  margin-left: auto;
+  /* margin-left: auto; */
   padding-top: 7px;
   font-weight: 500;
   font-size: 12px;
@@ -870,6 +880,7 @@ button {
 .footer_downloads {
   display: flex;
   gap: 10px;
+  margin-right: 20px;
 }
 
 .footer_social-group {
@@ -880,6 +891,7 @@ button {
 
 .footer_downloads-img,
 .footer_social-img {
+  height: auto;
   border-radius: 5px;
 }
 
@@ -982,6 +994,18 @@ button {
   .cta-discount_title {
     font-size: 16px;
   }
+
+  .footer-subtitle {
+    font-size: 17px;
+  }
+
+  .footer_column-item {
+    font-size: 13px;
+  }
+
+  .footer_contacts-phone {
+    font-size: 15px;
+  }
 }
 
 
@@ -997,6 +1021,44 @@ button {
 
   .cta-picture {
     right: 20px;
+  }
+
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer_top {
+    padding-bottom: 30px;
+  }
+
+  .footer-subtitle {
+    margin-bottom: 13px;
+    font-size: 16px;
+  }
+
+  .footer_column-item {
+    font-size: 12px;
+  }
+
+  .footer_column-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .footer_contacts-phone {
+    font-size: 14px;
+  }
+
+  .footer_contacts-phone {
+    margin-bottom: 5px;
+  }
+
+  .footer_middle {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .footer_logo {
+    margin-right: 30px;
   }
 }
 
@@ -1027,6 +1089,14 @@ button {
 
   .cta-discount_title {
     text-align: center;
+  }
+
+  .footer_buyers-column {
+    gap: 25px;
+  }
+
+  .footer_contacts-column {
+    gap: 25px;
   }
 }
 
@@ -1094,6 +1164,32 @@ button {
   .cta {
     margin-bottom: 50px;
   }
+
+  .footer_buyers-column,
+  .footer_contacts-column {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer_bottom {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer_requisites,
+  .footer_policy,
+  .footer_payment {
+    margin-right: 0;
+  }
+
+  .footer_messenger-text {
+    font-size: 12px;
+  }
+
+  .footer_payment {
+    order: 2;
+  }
 }
 
 
@@ -1133,6 +1229,15 @@ button {
 
   .cta-text {
     margin-bottom: 15px;
+  }
+
+  .footer_top {
+    padding-bottom: 20px;
+  }
+
+  .footer_middle {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
@@ -1219,6 +1324,39 @@ button {
 
   .cta-discount_title {
     text-align: left;
+  }
+
+  .footer-top {
+    row-gap: 15px;
+  }
+
+  .footer_column {
+    flex-basis: 50%;
+    margin-right: 0;
+  }
+
+  .footer_buyers-column,
+  .footer_contacts-column {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .footer_contacts-phone,
+  .footer_column-item {
+    white-space: nowrap;
+  }
+
+  .footer_order-btn {
+    padding-top: 0;
+  }
+
+  .footer_middle {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer_social-group {
+    margin-left: 0;
   }
 }
 
