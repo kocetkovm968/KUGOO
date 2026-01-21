@@ -1141,11 +1141,6 @@ button {
     margin-bottom: 50px;
   }
 
-  /* .benefits-item,
-  .benefits-item:first-child {
-    flex-direction: column;
-  } */
-
   .benefits-item {
     align-items: center;
   }
@@ -1175,15 +1170,6 @@ button {
 
   .benefits-content-text {
     font-size: 14px;
-  }
-
-  .benefits-picture {
-    /* align-self: center;
-    width: auto; */
-  }
-
-  .benefits-content-title {
-    /* max-width: 100%; */
   }
 
   .cta {
