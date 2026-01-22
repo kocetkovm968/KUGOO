@@ -41,7 +41,6 @@ ol {
 img {
   display: block;
   max-width: 100%;
-  /* height: auto; */
   object-fit: cover;
 }
 
@@ -417,12 +416,6 @@ button {
   margin-bottom: 51px;
 }
 
-/* .products-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
 .products-title {
   margin: auto;
   margin-bottom: 50px;
@@ -434,31 +427,31 @@ button {
   text-align: center;
 }
 
+.products-slider {
+  margin: auto;
+  max-width: 1110px;
+}
+
 .products-cards {
   display: flex;
-  /* flex-wrap: wrap; */
-  /* margin: auto; */
-  max-width: 1110px;
-  /* justify-content: center; */
-  /* gap: 30px; */
-  /* column-gap: var(--column-gap); */
-  /* --column-gap: 30px; */
-  /* --elems: 4; */
 }
 
 .products-card {
-  max-width: 255px;
-  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+}
+
+.products-card-wrap {
   width: 255px;
-  
-  /* width: calc((100% - ((var(--elems) - 1) * var(--column-gap))) / var(--elems)); */
   border: 1.50px solid #eaebed;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .products-card-top {
   position: relative;
   height: 231px;
+  background-color: #f0f1f5;
 }
 
 .products-card-pic,
@@ -467,7 +460,6 @@ button {
   height: 100%;
   border-radius: 10px 10px 0 0;
 }
-
 
 .badge-hit,
 .badge-new {
@@ -495,17 +487,9 @@ button {
   position: absolute;
   top: 10px;
   right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.badge-balance-icon {
-  opacity: 0.4;
 }
 
 .products-card-bottom {
@@ -521,7 +505,7 @@ button {
 
 .products-card-features {
   display: flex;
-  gap: 24px;
+  justify-content:space-between;
   margin-bottom: 25px;
 }
 
@@ -544,7 +528,7 @@ button {
   color: #5d6c7b;
 }
 
-.products-card-wrap {
+.products-card-inner {
   display: flex;
   margin-bottom: 16px;
 }
@@ -552,7 +536,7 @@ button {
 .products-card-price-block {
   display: flex;
   flex-direction: column;
-  margin-right: 24px;
+  margin-right: auto;
 }
 
 .products-card-old-price {
@@ -573,6 +557,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
