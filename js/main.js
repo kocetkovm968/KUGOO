@@ -7,7 +7,7 @@ const productsSlider = new Swiper('.products-slider', {
       slidesPerView: 2,
       spaceBetween: 15,
     },
-    780: {
+    768: {
       slidesPerView: 3,
       spaceBetween: 15,
     },

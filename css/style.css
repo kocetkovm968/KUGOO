@@ -505,7 +505,7 @@ button {
 
 .products-card-features {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   margin-bottom: 25px;
 }
 
@@ -530,6 +530,7 @@ button {
 
 .products-card-inner {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 16px;
 }
 
@@ -562,10 +563,6 @@ button {
   height: 40px;
   border-radius: 50%;
   border: 1.30px solid #eaebed;
-}
-
-.products-card-btn:first-of-type {
-  margin-right: 10px;
 }
 
 .products-card-heart {
@@ -1042,6 +1039,15 @@ button {
 
   .footer_logo {
     margin-right: 30px;
+  }
+}
+
+
+
+@media (max-width: 1039px) {
+  .products-slider-prev,
+  .products-slider-next {
+    display: flex;
   }
 }
 
