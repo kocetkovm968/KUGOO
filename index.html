@@ -524,14 +524,14 @@
     <section class="cta">
       <div class="container">
         <div class="bg-grey cta-section">
-          <form action="" method="" class="cta-form">
+          <form action="" method="POST" class="cta-form">
             <h2 class="cta-title">Нет нужной модели, которую хотите протестировать?</h2>
             <p class="cta-text">Оставьте заявку, и менеджер подберет нужный самокат</p>
             <div class="cta-input-btn-wrap">
               <div class="cta-input-group input-group">
                 <label for="user-phone"></label>
                 <input class="input cta-input phone-mask" id="user-phone" name="userphone" type="tel"
-                  placeholder="+7 (___) __ - __ - __">
+                  placeholder="+7 (___) __ - __ - __" required maxlength="30">
               </div>
               <button class="btn-primary cta-button">Оставить заявку на тест-драйв</button>
             </div>
@@ -558,17 +558,57 @@
     <section class="cta-discount">
       <div class="cta-discount_content container section-padding">
         <h2 class="cta-discount_title">Оставьте свою почту и станьте первым, кто получит скидку на новые самокаты</h2>
-        <div class="cta-discount-inner">
+        <form action="" method="POST" class="cta-discount-inner">
           <div class="cta-discount-group input-group">
             <label for="user-mail"></label>
             <input class="input cta-discount-input" id="user-mail" name="usermail" type="mail"
-              placeholder="Введите Ваш email">
+              placeholder="Введите Ваш email" required>
           </div>
           <button class="btn btn-white cta-discount-btn">Подписаться</button>
-        </div>
+        </form>
       </div>
     </section>
     <!-- /.cta-discount -->
+
+    <div class="modal">
+      <div class="modal_wrap">
+        <div class="modal_content">
+          <form action="" class="modal_form">
+            <h2 class="modal_title">Запишитесь на&nbsp;тест-&#8288;драйв электросамоката</h2>
+            <span class="modal_descr">и подберите модель для себя</span>
+            <p class="modal_text">Менеджер свяжется с вами в течение 5 минут, чтобы согласовать время.</p>
+            <span class="modal_description">Как с вами удобнее связаться?</span>
+            <div class="modal_input-wrap">
+              <div class="modal_input-group input-group">
+                <label for="user-phone"></label>
+                <input class="input cta-input phone-mask" id="user-phone" name="userphone" type="tel"
+                  placeholder="+7 (___) __ - __ - __" required maxlength="30">
+              </div>
+              <button class="btn-primary cta-button">Оформить предзаказ</button>
+            </div>
+            <div class="cta-policy modal_policy">
+              <label for="accept" class="accept-label">
+                <input type="checkbox" class="accept modal_accept" id="accept" name="accept" checked required>
+              </label>
+              <p class="cta-policy-text modal_policy-text">
+                Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и&nbsp;<a href="#"
+                  class="cta-policy-link">политикой конфиденциальности</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <picture class="modal_picture">
+          <source type="image/webp" srcset="img/modal-img.webp">
+          <source type="image/jpeg" srcset="img/modal-img.jpg">
+          <img src="img/modal-img.jpg" class="modal_img" width="337" height="497" alt="Девушка на самокате">
+        </picture>
+        <button class="modal_close close">
+          <span class="close_line"></span>
+          <span class="close_line"></span>
+        </button>
+      </div>
+    </div>
+    <!-- /.modal -->
   </main>
 
   <footer class="footer">
@@ -645,6 +685,7 @@
         </div>
         <a href="#" class="footer_order-btn footer_column link_hover">Заказать звонок</a>
       </div>
+      <!-- /.footer_top -->
       <div class="footer_middle">
         <a href="./" class="footer_logo logo">
           <img src="img/logo.svg" class="logo_img" width="116" height="23" alt="Логотип компании Kugoo">
@@ -671,6 +712,7 @@
           </a>
         </div>
       </div>
+      <!-- /.footer_middle -->
       <div class="footer_bottom">
         <a href="#" class="footer_requisites link_hover">Реквизиты</a>
         <a href="#" class="footer_policy link_hover">Политика конфиденциальности</a>
@@ -710,10 +752,12 @@
           </ul>
         </div>
       </div>
+      <!-- /.footer_bottom -->
     </div>
   </footer>
 
   <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/just-validate.production.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
