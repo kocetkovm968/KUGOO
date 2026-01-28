@@ -816,7 +816,7 @@ button {
   display: flex;
 }
 
-.modal_wrap {
+.modal_content {
   position: relative;
   display: flex;
   align-items: center;
@@ -828,7 +828,7 @@ button {
   background-color: #ffffff;
 }
 
-.modal_content {
+.modal_column {
   flex-shrink: 0;
   max-width: 17.875rem;
   width: 100%;
@@ -902,18 +902,22 @@ button {
 }
 
 .close_line {
+  position: relative;
   display: block;
   width: 20px;
   height: 1px;
   background-color: #5d6c7b;
+  transform: rotate(135deg);
 }
 
-.close_line:first-child {
-  transform: rotate(134deg);
-}
-
-.close_line:last-child {
-  transform: rotate(-135deg);
+.close_line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: #5d6c7b;
+  transform: rotate(90deg);
 }
 
 
@@ -1471,12 +1475,12 @@ button {
     padding-bottom: 15px;
   }
 
-  .modal_wrap {
+  .modal_content {
     justify-content: center;
     max-width: 400px;
   }
 
-  .modal_content {
+  .modal_column {
     max-width: 100%;
   }
 

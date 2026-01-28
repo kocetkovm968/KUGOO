@@ -1,3 +1,8 @@
+const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal_content');
+const modalClose = modal.querySelector('.modal_close');
+
+
 /* слайдер для секции "products" */
 const productsSlider = new Swiper('.products-slider', {
   speed: 400,
@@ -20,6 +25,41 @@ const productsSlider = new Swiper('.products-slider', {
       spaceBetween: 30,
     },
   },
+});
+
+/* скрипт для открытия/закрытия модального окна */
+// все кнопки для закрытия модального окна
+const modalButtons = document.querySelectorAll("[data-toggle=modal]");
+// перебираем массив
+modalButtons.forEach((button) => {
+  // клик по кнопке
+  button.addEventListener("click", (event) => {
+    // отменяем действие по умолчанию
+    event.preventDefault(); 
+    // открываем модальное окно
+    modal.classList.toggle('is-open');
+    // отслеживаем клик по модальному окну и прозрачным областям
+    modal.addEventListener("click", (event) => {
+      // если в пути (composedPath()) куда кликнули нет(!) элемента modalСontent)
+      if (!event.composedPath().includes(modalContent)) {
+        /* то закрываем окно */
+        modal.classList.remove("is-open");
+      }
+    });
+    // отслеживаем клик по кнопке закрыть модального окна
+    modalClose.addEventListener("click", () => {
+      // закрываем модальное окно
+      modal.classList.remove("is-open");
+    });
+  });
+});
+/* ловим событие нажатия на кнопки клавиатуры */
+document.addEventListener("keyup", (event) => {
+  /* если нажали кнопку Escape и мод.окно содержит класс is-open*/
+  if (event.key == "Escape" && modal.classList.contains("is-open")) {
+    /* закрываем мод.окно */
+    modal.classList.toggle("is-open");
+  } 
 });
 
 
