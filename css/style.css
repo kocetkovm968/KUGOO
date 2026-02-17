@@ -902,6 +902,8 @@ button {
   position: absolute;
   top: .9375rem;
   right: 1.25rem;
+  width: 20px;
+  height: 20px;
   z-index: 10;
 }
 
