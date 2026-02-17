@@ -809,15 +809,19 @@ button {
 .modal {
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(41, 45, 51, 0.5);
   z-index: 100;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: visibility 0.2s ease, transform 0.2s ease;
 }
 
 .modal.is-open {
-  display: flex;
+  visibility: visible;
+  transform: none;
 }
 
 .modal_content {
