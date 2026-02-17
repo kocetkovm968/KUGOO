@@ -106,13 +106,15 @@ button {
 /* header */
 /* ============================================= */
 .header {
-  margin-bottom: 2.5625rem;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  background-color: #ffffff;
 }
 
 .header-top {
   padding-top: 12px;
   padding-bottom: 9px;
-  height: 40px;
   border-bottom: 1px solid #ecf3ff;
 }
 
@@ -153,11 +155,7 @@ button {
 }
 
 .header-bottom {
-  position: fixed;
   padding-top: 1.8125rem;
-  width: 100%;
-  background-color: #ffffff;
-  z-index: 20;
 }
 
 .logo {
@@ -268,7 +266,7 @@ button {
 /* ============================================= */
 .hero {
   margin-bottom: 4.5rem;
-  padding-top: 69px;
+  padding-top: 150px;
 }
 
 .hero-wrap {
