@@ -7,6 +7,10 @@ const modalClose = modal.querySelector('.modal_close');
 const productsSlider = new Swiper('.products-slider', {
   speed: 400,
   slidesPerView: 1,
+  navigation: {
+    nextEl: ".products .products-slider-next",
+    prevEl: ".products .products-slider-prev",
+  },
   breakpoints: {
     520: {
       slidesPerView: 2,
