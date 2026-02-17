@@ -900,7 +900,7 @@ button {
 
 .modal_close {
   position: absolute;
-  top: 1.5625rem;
+  top: .9375rem;
   right: 1.25rem;
   z-index: 10;
 }
@@ -1356,7 +1356,7 @@ button {
   }
 
   .hero {
-    padding-top: 110px;
+    padding-top: 170px;
   }
 
   .hero-img {
