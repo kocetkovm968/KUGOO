@@ -535,7 +535,7 @@
     <section class="cta">
       <div class="container">
         <div class="bg-grey cta-section">
-          <form action="" method="POST" class="cta-form">
+          <form action="#" method="POST" class="cta-form">
             <h2 class="cta-title">Нет нужной модели, которую хотите протестировать?</h2>
             <p class="cta-text">Оставьте заявку, и менеджер подберет нужный самокат</p>
             <div class="cta-input-btn-wrap">
@@ -544,7 +544,7 @@
                 <input class="input cta-input phone-mask" id="user-phone" name="userphone" type="tel"
                   placeholder="+7 (___) __ - __ - __" required maxlength="30">
               </div>
-              <button class="btn-primary cta-button">Оставить заявку на тест-драйв</button>
+              <button class="btn-primary cta-button" type="submit">Оставить заявку на тест-драйв</button>
             </div>
             <div class="cta-policy">
               <label for="accept" class="accept-label">
@@ -569,13 +569,13 @@
     <section class="cta-discount">
       <div class="cta-discount_content container section-padding">
         <h2 class="cta-discount_title">Оставьте свою почту и станьте первым, кто получит скидку на новые самокаты</h2>
-        <form action="" method="POST" class="cta-discount-inner">
+        <form action="#" method="POST" class="cta-discount-inner">
           <div class="cta-discount-group input-group">
             <label for="user-mail"></label>
-            <input class="input cta-discount-input" id="user-mail" name="usermail" type="mail"
+            <input class="input cta-discount-input" id="user-mail" name="usermail" type="email"
               placeholder="Введите Ваш email" required>
           </div>
-          <button class="btn btn-white cta-discount-btn">Подписаться</button>
+          <button class="btn btn-white cta-discount-btn" type="submit">Подписаться</button>
         </form>
       </div>
     </section>
@@ -584,18 +584,18 @@
     <div class="modal">
       <div class="modal_content">
         <div class="modal_column">
-          <form action="" class="modal_form">
+          <form action="#" class="modal_form">
             <h2 class="modal_title">Запишитесь на&nbsp;тест-&#8288;драйв электросамоката</h2>
             <span class="modal_descr">и подберите модель для себя</span>
             <p class="modal_text">Менеджер свяжется с вами в течение 5 минут, чтобы согласовать время.</p>
             <span class="modal_description">Как с вами удобнее связаться?</span>
             <div class="modal_input-wrap">
               <div class="modal_input-group input-group">
-                <label for="user-phone"></label>
-                <input class="input cta-input phone-mask" id="user-phone" name="userphone" type="tel"
+                <label for="modal-user-phone"></label>
+                <input class="input cta-input phone-mask" id="modal-user-phone" name="userphone" type="tel"
                   placeholder="+7 (___) __ - __ - __" required maxlength="30">
               </div>
-              <button class="btn-primary cta-button">Оформить предзаказ</button>
+              <button class="btn-primary cta-button" type="submit">Оформить предзаказ</button>
             </div>
             <div class="cta-policy modal_policy">
               <label for="accept" class="accept-label">

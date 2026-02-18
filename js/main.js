@@ -31,6 +31,7 @@ const productsSlider = new Swiper('.products-slider', {
   },
 });
 
+
 /* скрипт для открытия/закрытия модального окна */
 // все кнопки для закрытия модального окна
 const modalButtons = document.querySelectorAll("[data-toggle=modal]");
@@ -39,7 +40,7 @@ modalButtons.forEach((button) => {
   // клик по кнопке
   button.addEventListener("click", (event) => {
     // отменяем действие по умолчанию
-    event.preventDefault(); 
+    event.preventDefault();
     // открываем модальное окно
     modal.classList.toggle('is-open');
     // отслеживаем клик по модальному окну и прозрачным областям
@@ -63,7 +64,7 @@ document.addEventListener("keyup", (event) => {
   if (event.key == "Escape" && modal.classList.contains("is-open")) {
     /* закрываем мод.окно */
     modal.classList.toggle("is-open");
-  } 
+  }
 });
 
 
@@ -148,52 +149,16 @@ forms.forEach((form) => {//перебираем все формы
   });
   // применить правила к полям формы
   validation
-    .addField('[name=usermail]', [
-      {
-        rule: 'required',
-        errorMessage: 'Укажите адрес электронной почты',
-      },
-    ])
     .addField('[name=userphone]', [
       {
         rule: 'required',
         errorMessage: 'Укажите телефон',
       },
-    ]);
-    //Проверка пройдена и форма отправлена
-    // .onSuccess((event) => {
-    //   const thisForm = event.target; //определяем в какой мы форме
-    //   const formData = new FormData(thisForm); //все данные из нашей формы
-
-    //   //функция которая незаметно дял пользователя возьмет данные из formData и отправит на URL
-    //   const ajaxSend = (formData) => {
-    //     //возьми атрибут этой формы и будет тот самый URL
-    //     fetch(thisForm.getAttribute('action'), {
-    //       //со следующими опциями
-    //       method: thisForm.getAttribute('method'),//метод которой указан в этой форме
-    //       body: formData, //укажи в теле запроса все то что содержится в этой форме
-    //     }).then((Response) => { //тогда получи ответ
-    //       if(Response.ok) {//если с ответом все ок
-    //         thisForm.reset();//очисти форму
-    //         currentModal.classList.remove("is-open");//закрой текущее мод.окно
-    //         alertModal.classList.add("is-open");//открой мод.окно alert
-    //         currentModal = alertModal;//переопределяем что тек.мод окно это alert
-    //         /* назначаем контент текущего мод.окна */
-    //         modalСontent = currentModal.querySelector(".modal-content");
-    //         /* отслеживаем клик по окну и пустым областям */
-    //         currentModal.addEventListener("click", (event) => {
-    //           /* если в пути (composedPath()) куда кликнули нет(!) элемента modalСontent) */
-    //           if (!event.composedPath().includes(modalСontent)) {
-    //             /* то закрываем окно */
-    //             currentModal.classList.remove("is-open");
-    //           }
-    //         });
-    //       } else {
-    //         alert(Response.statusText);
-    //       }
-    //     });
-    //   };
-    //   ajaxSend(formData);//вызываем функцию с параметрами formData
-    // });
+    ])
+    .addField('[name=usermail]', [
+      {
+        rule: 'required',
+        errorMessage: 'Укажите почту',
+      },
+    ])
 });
-  
