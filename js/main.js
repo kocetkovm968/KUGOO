@@ -3,6 +3,14 @@ const modalContent = document.querySelector('.modal_content');
 const modalClose = modal.querySelector('.modal_close');
 
 
+const productsCardBtn = document.querySelectorAll('.products-card-btn');
+productsCardBtn.forEach((button) => {
+  button.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+}); 
+
+
 /* слайдер для секции "products" */
 const productsSlider = new Swiper('.products-slider', {
   speed: 400,

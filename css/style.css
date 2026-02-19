@@ -470,10 +470,12 @@ button {
 .products-card {
   display: flex;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .products-card-wrap {
   width: 255px;
+  height: 492px;
   border: 1.50px solid #eaebed;
   border-radius: 10px;
   overflow: hidden;
@@ -596,8 +598,20 @@ button {
   border: 1.30px solid #eaebed;
 }
 
-.products-card-heart {
+.products-card-icon {
   fill: #6F73EE;
+}
+
+.icon-dark {
+  display: none;
+}
+
+.products-card-btn.active .icon-light {
+  display: none;
+}
+
+.products-card-btn.active .icon-dark {
+  display: block;
 }
 
 .products-card-button {
@@ -716,7 +730,8 @@ button {
   font-weight: 400;
   font-size: 12px;
   line-height: 160%;
-  background-color: #ffffff;;
+  background-color: #ffffff;
+  ;
   transform: translateY(-50%);
 }
 
@@ -1189,6 +1204,11 @@ button {
 
   .cta-policy-link:hover {
     color: #6f73ee;
+  }
+
+  .products-card:hover {
+    transform: scale(0.99);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 }
 
