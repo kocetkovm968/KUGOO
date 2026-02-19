@@ -475,7 +475,7 @@ button {
 
 .products-card-wrap {
   width: 255px;
-  height: 492px;
+  min-height: 492px;
   border: 1.50px solid #eaebed;
   border-radius: 10px;
   overflow: hidden;
