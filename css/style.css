@@ -349,6 +349,7 @@ button {
 .hero-benefits-icon {
   position: relative;
   z-index: 2;
+  fill: white;
 }
 
 .hero-benefits-text {
@@ -987,6 +988,66 @@ button {
   height: 1px;
   background-color: #5d6c7b;
   transform: rotate(90deg);
+}
+
+
+
+/* ============================================= */
+/* catalog */
+/* ============================================= */
+.catalog {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(41, 45, 51, 0.5);
+  z-index: 20;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: visibility 0.2s ease, transform 0.2s ease;
+}
+
+.catalog.is-open {
+  visibility: visible;
+  transform: none;
+}
+
+.catalog_content {
+  position: relative;
+  padding: 25px;
+  max-width: 320px;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.catalog_header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b0b0c4;
+}
+
+.catalog_close {
+  top: 25px;
+  right: 25px;
+}
+
+.catalog_inner {
+  padding-top: 20px;
+}
+
+.catalog_item {
+  padding: 15px 0;
+  border-bottom: 2px solid #f7f7f7;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.catalog_link {
+  display: flex;
+  align-items: center;
+  color: #282739;
+}
+
+.catalog_link-icon {
+  margin-right: 15px;
+  fill: #6f73ee;
 }
 
 

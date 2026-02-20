@@ -2,6 +2,18 @@ const modal = document.querySelector('.modal');
 const modalContent = document.querySelector('.modal_content');
 const modalClose = modal.querySelector('.modal_close');
 
+const catalog = document.querySelector('.catalog');
+const catalogBtn = document.querySelector('.catalog-btn');
+const catalogClose = document.querySelector('.catalog_close');
+
+
+catalogBtn.addEventListener("click", () => {
+  catalog.classList.toggle('is-open');
+  catalogClose.addEventListener("click", () => {
+    catalog.classList.remove('is-open');
+  });
+});
+
 
 const productsCardBtn = document.querySelectorAll('.products-card-btn');
 productsCardBtn.forEach((button) => {
@@ -163,10 +175,10 @@ forms.forEach((form) => {//перебираем все формы
         errorMessage: 'Укажите телефон',
       },
     ])
-    .addField('[name=usermail]', [
+    /* .addField('[name=usermail]', [
       {
         rule: 'required',
         errorMessage: 'Укажите почту',
       },
-    ])
+    ]) */
 });

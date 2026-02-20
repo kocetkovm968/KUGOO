@@ -64,7 +64,7 @@
         <a href="./" class="header-logo logo">
           <img src="img/logo.svg" class="logo_img" width="116" height="23" alt="Логотип компании Kugoo">
         </a>
-        <div class="header-catalog catalog">
+        <div class="header-catalog catalog-btn">
           <div class="burger">
             <span class="burger-line"></span>
             <span class="burger-line"></span>
@@ -113,6 +113,34 @@
   </header>
 
   <main>
+    <div class="catalog is-open">
+      <div class="catalog_content">
+        <div class="catalog_header">
+          <h2 class="catalog_header-title">Каталог</h2>
+          <button class="catalog_close close">
+            <span class="close_line"></span>
+          </button>
+        </div>
+        <div class="catalog_inner">
+          <ul class="catalog_list">
+            <li class="catalog_item">
+              <a href="#" class="catalog_link">
+                <svg class="catalog_link-icon" width="25" height="25">
+                  <use href="img/sprite.svg#scooter"></use>
+                </svg>
+                <span>Электросамокаты</span>
+
+              </a>
+            </li>
+            <li class="catalog_item">
+              <a href="#" class="catalog_link">Электроскутеры</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /.catalog -->
+
     <section class="hero">
       <div class="container hero-wrap">
         <picture class="hero-picture">
