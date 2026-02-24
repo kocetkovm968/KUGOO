@@ -100,6 +100,23 @@ button {
   fill: #5D6C7B;
 }
 
+.stop-scroll {
+  overflow: hidden;
+}
+
+.no-scrollbar {
+  /* Для Chrome, Safari, Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Для IE и Edge */
+  -ms-overflow-style: none;
+
+  /* Для Firefox */
+  scrollbar-width: none;
+}
+
 
 
 /* ============================================= */
@@ -1030,9 +1047,12 @@ button {
 
 .catalog_inner {
   padding-top: 20px;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .catalog_item {
+  position: relative;
   padding: 15px 0;
   border-bottom: 2px solid #f7f7f7;
   font-size: 18px;
@@ -1048,6 +1068,33 @@ button {
 .catalog_link-icon {
   margin-right: 15px;
   fill: #6f73ee;
+}
+
+.catalog_subcatalog {
+  /* position: absolute; */
+  position: fixed;
+  /* top: 0;
+  left: 270px; */
+  display: none;
+  padding: 10px 20px;
+  max-width: 320px;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.subcatalog_item {
+  padding: 10px 0;
+  border-bottom: 2px solid #f7f7f7;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.subcatalog_link {
+  display: flex;
+  align-items: center;
+  color: #5d6c7b;
+  text-underline-position: under;
 }
 
 
@@ -1270,6 +1317,18 @@ button {
   .products-card:hover {
     transform: scale(0.99);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .catalog_item:hover .catalog_link {
+    color: #6f73ee;
+  }
+
+  .catalog_item:hover .subcatalog{
+    display: block;
+  }
+
+  .subcatalog_item:hover .subcatalog_link {
+    text-decoration: underline;
   }
 }
 

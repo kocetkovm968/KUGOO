@@ -5,16 +5,43 @@ const modalClose = modal.querySelector('.modal_close');
 const catalog = document.querySelector('.catalog');
 const catalogBtn = document.querySelector('.catalog-btn');
 const catalogClose = document.querySelector('.catalog_close');
+const catalogItem = document.querySelectorAll('.catalog_item');
+
+const body = document.body;/* для запрета скролла страницы */
 
 
+/* открытие меню каталога */
 catalogBtn.addEventListener("click", () => {
   catalog.classList.toggle('is-open');
+  body.classList.toggle('stop-scroll');
   catalogClose.addEventListener("click", () => {
     catalog.classList.remove('is-open');
+    body.classList.remove('stop-scroll')
   });
 });
 
 
+/* появление подкаталога при наведении на меню каталога */
+// document.querySelectorAll('.catalog_item').forEach(item => {
+catalogItem.forEach(item => {
+  // обработчик при наведении на пункт меню
+  item.addEventListener('mouseenter', function() {
+    // ищем подменю внутри пункта меню
+    const subcatalog = this.querySelector('.subcatalog');
+    // если подменю нет то прерываем функцию
+    if (!subcatalog) return;
+
+    // узнаем координаты относительно области просмотра
+    const rect = this.getBoundingClientRect();
+    // горизонтальное положение пункта меню
+    subcatalog.style.left = `${rect.right}px`;
+    // вертикальное положение пункта меню
+    subcatalog.style.top = `${/* window.scrollY + */ rect.top}px`;
+  });
+});
+
+
+/* изменение иконки при клике на нее в карточке товара */
 const productsCardBtn = document.querySelectorAll('.products-card-btn');
 productsCardBtn.forEach((button) => {
   button.addEventListener("click", function () {
@@ -63,6 +90,7 @@ modalButtons.forEach((button) => {
     event.preventDefault();
     // открываем модальное окно
     modal.classList.toggle('is-open');
+    body.classList.toggle('stop-scroll');
     // отслеживаем клик по модальному окну и прозрачным областям
     modal.addEventListener("click", (event) => {
       // если в пути (composedPath()) куда кликнули нет(!) элемента modalСontent)
