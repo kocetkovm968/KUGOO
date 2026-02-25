@@ -173,6 +173,7 @@ button {
 
 .header-bottom {
   padding-top: 1.8125rem;
+  padding-bottom: 5px;
 }
 
 .logo {
@@ -213,7 +214,6 @@ button {
   width: 13px;
   height: 1px;
   background-color: #ffffff;
-  transition: all 0.2s ease-out;
 }
 
 .burger-line::before {
@@ -224,7 +224,6 @@ button {
   width: 13px;
   height: 1px;
   background-color: #ffffff;
-  transition: all 0.2s ease-out;
 }
 
 .burger-line::after {
@@ -236,7 +235,6 @@ button {
   width: 7px;
   height: 1px;
   background-color: #ffffff;
-  transition: all 0.2s ease-out;
 }
 
 .header-search {
@@ -296,7 +294,7 @@ button {
 /* ============================================= */
 .hero {
   margin-bottom: 4.5rem;
-  padding-top: 150px;
+  padding-top: 145px;
 }
 
 .hero-wrap {
@@ -1043,6 +1041,7 @@ button {
 .catalog_content {
   position: relative;
   padding: 25px;
+  padding-bottom: 50px;
   max-width: 320px;
   height: 100vh;
   background-color: #ffffff;
@@ -1084,10 +1083,7 @@ button {
 }
 
 .catalog_subcatalog {
-  /* position: absolute; */
   position: fixed;
-  /* top: 0;
-  left: 270px; */
   display: none;
   padding: 10px 20px;
   max-width: 320px;
@@ -1539,6 +1535,10 @@ button {
   .footer_contacts-column {
     gap: 25px;
   }
+
+  .catalog_subcatalog {
+    position: static; /* отменяем абсолютное позиционирование */
+  }
 }
 
 
@@ -1564,7 +1564,7 @@ button {
   }
 
   .hero {
-    padding-top: 170px;
+    padding-top: 165px;
   }
 
   .hero-img {

@@ -6,23 +6,39 @@ const catalog = document.querySelector('.catalog');
 const catalogBtn = document.querySelector('.catalog-btn');
 const catalogClose = document.querySelector('.catalog_close');
 const catalogItem = document.querySelectorAll('.catalog_item');
+const catalogContent = document.querySelector('.catalog_content');
 
 const body = document.body;/* для запрета скролла страницы */
 
+let isCatalogOpen = false;
 
 /* открытие меню каталога */
 catalogBtn.addEventListener("click", () => {
   catalog.classList.toggle('is-open');
   body.classList.toggle('stop-scroll');
+  catalog.addEventListener("click", (event) => {
+    if(!event.composedPath().includes(catalogContent)) {
+      catalog.classList.remove('is-open')
+    }
+  });
   catalogClose.addEventListener("click", () => {
     catalog.classList.remove('is-open');
-    body.classList.remove('stop-scroll')
+    body.classList.remove('stop-scroll');
   });
+});
+/* ловим событие нажатия на кнопки клавиатуры */
+document.addEventListener("keyup", (event) => {
+  /* если нажали кнопку Escape и каталог содержит класс is-open*/
+  if (event.key == "Escape" && catalog.classList.contains("is-open")) {
+    /* закрываем каталог */
+    catalog.classList.toggle("is-open");
+  }
 });
 
 
+
+
 /* появление подкаталога при наведении на меню каталога */
-// document.querySelectorAll('.catalog_item').forEach(item => {
 catalogItem.forEach(item => {
   // обработчик при наведении на пункт меню
   item.addEventListener('mouseenter', function() {
@@ -103,6 +119,7 @@ modalButtons.forEach((button) => {
     modalClose.addEventListener("click", () => {
       // закрываем модальное окно
       modal.classList.remove("is-open");
+      body.classList.remove('stop-scroll');
     });
   });
 });
@@ -112,6 +129,7 @@ document.addEventListener("keyup", (event) => {
   if (event.key == "Escape" && modal.classList.contains("is-open")) {
     /* закрываем мод.окно */
     modal.classList.toggle("is-open");
+    body.classList.remove('stop-scroll');
   }
 });
 
