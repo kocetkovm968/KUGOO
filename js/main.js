@@ -10,7 +10,6 @@ const catalogContent = document.querySelector('.catalog_content');
 
 const body = document.body;/* для запрета скролла страницы */
 
-let isCatalogOpen = false;
 
 /* открытие меню каталога */
 catalogBtn.addEventListener("click", () => {
@@ -19,6 +18,7 @@ catalogBtn.addEventListener("click", () => {
   catalog.addEventListener("click", (event) => {
     if(!event.composedPath().includes(catalogContent)) {
       catalog.classList.remove('is-open')
+      body.classList.remove('stop-scroll');
     }
   });
   catalogClose.addEventListener("click", () => {
@@ -32,10 +32,9 @@ document.addEventListener("keyup", (event) => {
   if (event.key == "Escape" && catalog.classList.contains("is-open")) {
     /* закрываем каталог */
     catalog.classList.toggle("is-open");
+    body.classList.remove('stop-scroll');
   }
 });
-
-
 
 
 /* появление подкаталога при наведении на меню каталога */
@@ -113,6 +112,7 @@ modalButtons.forEach((button) => {
       if (!event.composedPath().includes(modalContent)) {
         /* то закрываем окно */
         modal.classList.remove("is-open");
+        body.classList.remove('stop-scroll');
       }
     });
     // отслеживаем клик по кнопке закрыть модального окна
