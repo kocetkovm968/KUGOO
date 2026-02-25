@@ -11,6 +11,7 @@ const catalogContent = document.querySelector('.catalog_content');
 const body = document.body;/* для запрета скролла страницы */
 
 
+
 /* открытие меню каталога */
 catalogBtn.addEventListener("click", () => {
   catalog.classList.toggle('is-open');
@@ -35,6 +36,8 @@ document.addEventListener("keyup", (event) => {
     body.classList.remove('stop-scroll');
   }
 });
+
+
 
 
 /* появление подкаталога при наведении на меню каталога */
@@ -134,6 +137,31 @@ document.addEventListener("keyup", (event) => {
 });
 
 
+//Валидация формы
+const forms = document.querySelectorAll("form");//собираем все формы
+forms.forEach((form) => {//перебираем все формы
+  // инициализируем библиотеку проверки
+  const validation = new JustValidate(form, {
+    errorFieldCssClass: 'is-invalid',
+  });
+  // применить правила к полям формы
+  validation
+    .addField('[name=userphone]', [
+      {
+        rule: 'required',
+        errorMessage: 'Укажите телефон',
+      },
+    ])
+    .addField('[name=usermail]', [
+      {
+        rule: 'required',
+        errorMessage: 'Укажите почту',
+      },
+    ])
+});
+
+
+
 /* маска для поля ввода номера телефона */
 /* Создаем префикс +7, даже если вводят 8 или 9 */
 const prefixNumber = (str) => {
@@ -203,28 +231,4 @@ document.addEventListener("input", (e) => {
     /* итог: номер в формате +7 (999) 123-45-67 */
     input.value = result;
   }
-});
-
-
-//Валидация формы
-const forms = document.querySelectorAll("form");//собираем все формы
-forms.forEach((form) => {//перебираем все формы
-  // инициализируем библиотеку проверки
-  const validation = new JustValidate(form, {
-    errorFieldCssClass: 'is-invalid',
-  });
-  // применить правила к полям формы
-  validation
-    .addField('[name=userphone]', [
-      {
-        rule: 'required',
-        errorMessage: 'Укажите телефон',
-      },
-    ])
-    /* .addField('[name=usermail]', [
-      {
-        rule: 'required',
-        errorMessage: 'Укажите почту',
-      },
-    ]) */
 });
