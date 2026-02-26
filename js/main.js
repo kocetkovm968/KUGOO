@@ -17,7 +17,7 @@ catalogBtn.addEventListener("click", () => {
   catalog.classList.toggle('is-open');
   body.classList.toggle('stop-scroll');
   catalog.addEventListener("click", (event) => {
-    if(!event.composedPath().includes(catalogContent)) {
+    if (!event.composedPath().includes(catalogContent)) {
       catalog.classList.remove('is-open')
       body.classList.remove('stop-scroll');
     }
@@ -43,7 +43,7 @@ document.addEventListener("keyup", (event) => {
 /* появление подкаталога при наведении на меню каталога */
 catalogItem.forEach(item => {
   // обработчик при наведении на пункт меню
-  item.addEventListener('mouseenter', function() {
+  item.addEventListener('mouseenter', function () {
     // ищем подменю внутри пункта меню
     const subcatalog = this.querySelector('.subcatalog');
     // если подменю нет то прерываем функцию
@@ -65,7 +65,7 @@ productsCardBtn.forEach((button) => {
   button.addEventListener("click", function () {
     this.classList.toggle("active");
   });
-}); 
+});
 
 
 /* слайдер для секции "products" */
@@ -144,20 +144,28 @@ forms.forEach((form) => {//перебираем все формы
   const validation = new JustValidate(form, {
     errorFieldCssClass: 'is-invalid',
   });
+
+  const phoneField = form.querySelector('[name="userphone"]');
+  const mailField = form.querySelector('[name="usermail"]');
+
   // применить правила к полям формы
-  validation
-    .addField('[name=userphone]', [
+  if (phoneField) {
+    validation.addField(phoneField, [
       {
         rule: 'required',
         errorMessage: 'Укажите телефон',
       },
-    ])
-    .addField('[name=usermail]', [
+    ]);
+  }
+
+  if (mailField) {
+    validation.addField(mailField, [
       {
         rule: 'required',
         errorMessage: 'Укажите почту',
       },
-    ])
+    ]);
+  }
 });
 
 
