@@ -138,35 +138,35 @@ document.addEventListener("keyup", (event) => {
 
 
 //Валидация формы
-const forms = document.querySelectorAll("form");//собираем все формы
-forms.forEach((form) => {//перебираем все формы
-  // инициализируем библиотеку проверки
-  const validation = new JustValidate(form, {
-    errorFieldCssClass: 'is-invalid',
-  });
+// const forms = document.querySelectorAll("form");//собираем все формы
+// forms.forEach((form) => {//перебираем все формы
+//   // инициализируем библиотеку проверки
+//   const validation = new JustValidate(form, {
+//     errorFieldCssClass: 'is-invalid',
+//   });
 
-  const phoneField = form.querySelector('[name="userphone"]');
-  const mailField = form.querySelector('[name="usermail"]');
+//   const phoneField = form.querySelector('[name="userphone"]');
+//   const mailField = form.querySelector('[name="usermail"]');
 
-  // применить правила к полям формы
-  if (phoneField) {
-    validation.addField(phoneField, [
-      {
-        rule: 'required',
-        errorMessage: 'Укажите телефон',
-      },
-    ]);
-  }
+//   // применить правила к полям формы
+//   if (phoneField) {
+//     validation.addField(phoneField, [
+//       {
+//         rule: 'required',
+//         errorMessage: 'Укажите телефон',
+//       },
+//     ]);
+//   }
 
-  if (mailField) {
-    validation.addField(mailField, [
-      {
-        rule: 'required',
-        errorMessage: 'Укажите почту',
-      },
-    ]);
-  }
-});
+//   if (mailField) {
+//     validation.addField(mailField, [
+//       {
+//         rule: 'required',
+//         errorMessage: 'Укажите почту',
+//       },
+//     ]);
+//   }
+// });
 
 
 
