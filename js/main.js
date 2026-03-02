@@ -138,35 +138,59 @@ document.addEventListener("keyup", (event) => {
 
 
 //Валидация формы
-// const forms = document.querySelectorAll("form");//собираем все формы
-// forms.forEach((form) => {//перебираем все формы
-//   // инициализируем библиотеку проверки
-//   const validation = new JustValidate(form, {
-//     errorFieldCssClass: 'is-invalid',
-//   });
+const forms = document.querySelectorAll("form");//собираем все формы
+forms.forEach((form) => {//перебираем все формы
+  // инициализируем библиотеку проверки
+  const validation = new JustValidate(form, {
+    errorFieldCssClass: 'is-invalid',
+  });
 
-//   const phoneField = form.querySelector('[name="userphone"]');
-//   const mailField = form.querySelector('[name="usermail"]');
+  const phoneField = form.querySelector('[name="userphone"]');
+  const mailField = form.querySelector('[name="usermail"]');
 
-//   // применить правила к полям формы
-//   if (phoneField) {
-//     validation.addField(phoneField, [
-//       {
-//         rule: 'required',
-//         errorMessage: 'Укажите телефон',
-//       },
-//     ]);
-//   }
+  // применить правила к полям формы
+  if (phoneField) {
+    validation.addField(phoneField, [
+      {
+        rule: 'required',
+        errorMessage: 'Укажите телефон',
+      },
+    ]);
+  }
 
-//   if (mailField) {
-//     validation.addField(mailField, [
-//       {
-//         rule: 'required',
-//         errorMessage: 'Укажите почту',
-//       },
-//     ]);
-//   }
-// });
+  if (mailField) {
+    validation.addField(mailField, [
+      {
+        rule: 'required',
+        errorMessage: 'Укажите почту',
+      },
+    ]);
+  }
+
+  validation.onSuccess((event) => {
+    const thisForm = event.target; //определяем в какой мы форме
+    const formData = new FormData(thisForm); //собираем данные из нашей формы
+
+    // функция которая без перезагрузки страницы возьмет данные из формы и отправит в обработчик
+    const ajaxSend = (formData) => {
+      //возьми атрибуты этой формы и отправь на обработчик
+      fetch(thisForm.getAttribute('action'), {
+        // со следующими опциями
+        method: thisForm.getAttribute('method'),// метод который указан в данной форме
+        body: formData,// укажи в запросе все что содержится в дааной форме
+      }).then((response) => {
+        if(response.ok) {
+          thisForm.reset();
+          alert("Форма отправлена");
+          modal.classList.remove("is-open");
+        } else {
+          alert(response.statusText);
+        }
+      });
+    };
+    ajaxSend(formData);
+  });
+});
 
 
 
