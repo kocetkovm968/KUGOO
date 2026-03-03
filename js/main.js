@@ -5,30 +5,58 @@ const modalClose = modal.querySelector('.modal_close');
 const catalog = document.querySelector('.catalog');
 const catalogBtn = document.querySelector('.catalog-btn');
 const catalogClose = document.querySelector('.catalog_close');
-const catalogItem = document.querySelectorAll('.catalog_item');
+const catalogItems = document.querySelectorAll('.catalog_item');
 const catalogContent = document.querySelector('.catalog_content');
 
 const body = document.body;/* для запрета скролла страницы */
 
 
+// функция закрытия каталога
+const closeCatalog = () => {
+  catalog.classList.remove('is-open');
+  body.classList.remove('stop-scroll');
+};
+
+
+// функция закрытия модального окна
+const modalCloseFun = () => {
+  modal.classList.remove("is-open");
+  body.classList.remove('stop-scroll');
+};
+
+
+// на экранах > 1024px при клике по ссылкам каталога закрываем каталог, но переход не блокируем
+catalog.addEventListener(
+  "click",
+  (event) => {
+    // если ширина экрана <= 1024 завершаем выполнение функции
+    if (window.innerWidth <= 1024) return;
+    // ищем ссылки каталога и подкаталога по которым произойдет клик
+    const link = event.target.closest(".catalog_link, .subcatalog_link");
+    // если ссылки не найдены завершаем выполнение функции
+    if (!link) return;
+    // после перехода по ссылке закрываем каталог
+    closeCatalog();
+  },
+  true
+);
+
 
 /* открытие меню каталога */
-catalogBtn.addEventListener("click", () => {
+catalogBtn.addEventListener('click', () => {
   catalog.classList.toggle('is-open');
   body.classList.toggle('stop-scroll');
   catalog.addEventListener("click", (event) => {
     if (!event.composedPath().includes(catalogContent)) {
-      catalog.classList.remove('is-open')
-      body.classList.remove('stop-scroll');
+      closeCatalog();
     }
   });
-  catalogClose.addEventListener("click", () => {
-    catalog.classList.remove('is-open');
-    body.classList.remove('stop-scroll');
+  catalogClose.addEventListener('click', () => {
+    closeCatalog();
   });
 });
 /* ловим событие нажатия на кнопки клавиатуры */
-document.addEventListener("keyup", (event) => {
+document.addEventListener('keyup', (event) => {
   /* если нажали кнопку Escape и каталог содержит класс is-open*/
   if (event.key == "Escape" && catalog.classList.contains("is-open")) {
     /* закрываем каталог */
@@ -38,13 +66,13 @@ document.addEventListener("keyup", (event) => {
 });
 
 
-
-
 /* появление подкаталога при наведении на меню каталога */
-catalogItem.forEach(item => {
+catalogItems.forEach(item => {
   // обработчик при наведении на пункт меню
   item.addEventListener('mouseenter', function () {
-    // ищем подменю внутри пункта меню
+    // если ширина экрана < 1024 завершаем выполнение функции
+    if (window.innerWidth <= 1024) return;
+    // ищем подкаталог внутри пункта каталога
     const subcatalog = this.querySelector('.subcatalog');
     // если подменю нет то прерываем функцию
     if (!subcatalog) return;
@@ -54,7 +82,42 @@ catalogItem.forEach(item => {
     // горизонтальное положение пункта меню
     subcatalog.style.left = `${rect.right}px`;
     // вертикальное положение пункта меню
-    subcatalog.style.top = `${/* window.scrollY + */ rect.top}px`;
+    subcatalog.style.top = `${rect.top}px`;
+  });
+
+  // обработчик при клике на пункт меню
+  item.addEventListener('click', function (event) {
+    // если ширина экрана > 1024 завершаем выполнение фунции
+    if (window.innerWidth > 1024) return;
+
+    // ищем ссылки подкаталога по которым произойдет клик
+    const subcatalogLink = event.target.closest('.subcatalog_link');
+    // если ссылки подкаталога есть
+    if (subcatalogLink) {
+      // не блокируем переход по ссылке и закрываем каталог
+      closeCatalog();
+      return;
+    }
+
+    // ищем подкаталог внутри пункта каталога
+    const subcatalog = this.querySelector('.subcatalog');
+    // если подкаталога нет
+    if (!subcatalog) {
+      const catalogLink = event.target.closest('.catalog_link');
+      // то при клике по ссылке основного каталога
+      if (catalogLink) {
+        // не блокируем переход и закрываем каталог
+        closeCatalog();
+      }
+      return;
+    }
+
+    // предотвращаем переход по ссылке, если есть подкаталог
+    event.preventDefault();
+
+    // открытие/закрытие подкаталога
+    const isVisible = subcatalog.style.display === 'block';
+    subcatalog.style.display = isVisible ? 'none' : 'block';
   });
 });
 
@@ -114,15 +177,13 @@ modalButtons.forEach((button) => {
       // если в пути (composedPath()) куда кликнули нет(!) элемента modalСontent)
       if (!event.composedPath().includes(modalContent)) {
         /* то закрываем окно */
-        modal.classList.remove("is-open");
-        body.classList.remove('stop-scroll');
+        modalCloseFun();
       }
     });
     // отслеживаем клик по кнопке закрыть модального окна
     modalClose.addEventListener("click", () => {
       // закрываем модальное окно
-      modal.classList.remove("is-open");
-      body.classList.remove('stop-scroll');
+      modalCloseFun();
     });
   });
 });
@@ -179,10 +240,11 @@ forms.forEach((form) => {//перебираем все формы
         method: thisForm.getAttribute('method'),// метод который указан в данной форме
         body: formData,// укажи в запросе все что содержится в дааной форме
       }).then((response) => {
-        if(response.ok) {
+        if (response.ok) {
           thisForm.reset();
           alert("Форма отправлена");
           modal.classList.remove("is-open");
+          body.classList.remove('stop-scroll');
         } else {
           alert(response.statusText);
         }
