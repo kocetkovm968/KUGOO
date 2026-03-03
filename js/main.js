@@ -116,8 +116,15 @@ catalogItems.forEach(item => {
     event.preventDefault();
 
     // открытие/закрытие подкаталога
+    const catalogLinkTriangle = this.querySelector('.catalog_link-triangle');
     const isVisible = subcatalog.style.display === 'block';
-    subcatalog.style.display = isVisible ? 'none' : 'block';
+    if (isVisible) {
+      subcatalog.style.display = 'none';
+      catalogLinkTriangle.classList.remove("active");
+    } else {
+      subcatalog.style.display = 'block';
+      catalogLinkTriangle.classList.add("active");
+    }
   });
 });
 

@@ -760,7 +760,6 @@ button {
   font-size: 12px;
   line-height: 160%;
   background-color: #ffffff;
-  ;
   transform: translateY(-50%);
 }
 
@@ -1080,6 +1079,14 @@ button {
 .catalog_link-icon {
   margin-right: 15px;
   fill: #6f73ee;
+}
+
+.catalog_link-triangle {
+  margin-left: auto;
+}
+
+.catalog_link-triangle.active {
+  transform: rotate(90deg);
 }
 
 .catalog_subcatalog {
