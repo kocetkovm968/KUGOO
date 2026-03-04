@@ -105,6 +105,7 @@ button {
 }
 
 .no-scrollbar {
+
   /* Для Chrome, Safari, Opera */
   &::-webkit-scrollbar {
     display: none;
@@ -310,7 +311,7 @@ button {
   top: 0;
   left: 0;
   padding-top: 58px;
-  padding-left: 10.49vw;
+  padding-left: 9.4375rem;
   z-index: 10;
   color: #ffffff;
 }
@@ -1355,7 +1356,7 @@ form:has(.accept:checked) .cta-button {
     color: #6f73ee;
   }
 
-  .catalog_item:hover .subcatalog{
+  .catalog_item:hover .subcatalog {
     display: block;
   }
 
@@ -1375,6 +1376,10 @@ form:has(.accept:checked) .cta-button {
   .section-padding {
     padding-left: 10.42vw;
     padding-right: 10.42vw;
+  }
+
+  .hero-content {
+    padding-left: 10.49vw;
   }
 
   .cta-picture {
@@ -1558,7 +1563,8 @@ form:has(.accept:checked) .cta-button {
   }
 
   .catalog_subcatalog {
-    position: static; /* отменяем абсолютное позиционирование */
+    position: static;
+    /* отменяем абсолютное позиционирование */
   }
 }
 
