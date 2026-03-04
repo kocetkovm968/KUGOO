@@ -835,14 +835,14 @@ button {
 }
 
 /* Когда флажок снят блокируем кнопку */
-form:has(#accept:not(:checked)) .cta-button {
+form:has(.accept:not(:checked)) .cta-button {
   pointer-events: none;
   opacity: 0.5;
   cursor: default;
 }
 
 /* Когда флажок установлен */
-form:has(#accept:checked) .cta-button {
+form:has(.accept:checked) .cta-button {
   pointer-events: auto;
   opacity: 1;
   cursor: pointer;
