@@ -913,14 +913,20 @@ form:has(.accept:checked) .cta-button {
   justify-content: center;
   background-color: rgba(41, 45, 51, 0.5);
   z-index: 100;
+  opacity: 0;
   visibility: hidden;
-  transform: translateY(-100%);
-  transition: visibility 0.2s ease, transform 0.2s ease;
+  transform: translateX(-100%);
 }
 
 .modal.is-open {
+  transform: translateX(0);
   visibility: visible;
-  transform: none;
+  opacity: 1;
+}
+
+.modal.is-open .modal_content {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .modal_content {
@@ -933,6 +939,9 @@ form:has(.accept:checked) .cta-button {
   width: 100%;
   border-radius: 5px;
   background-color: #ffffff;
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .modal_column {
@@ -1042,14 +1051,20 @@ form:has(.accept:checked) .cta-button {
   inset: 0;
   background-color: rgba(41, 45, 51, 0.5);
   z-index: 20;
+  opacity: 0;
   visibility: hidden;
   transform: translateX(-100%);
-  transition: visibility 0.2s ease, transform 0.2s ease;
 }
 
 .catalog.is-open {
+  transform: translateX(0);
   visibility: visible;
-  transform: none;
+  opacity: 1;
+}
+
+.catalog.is-open .catalog_content {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .catalog_content {
@@ -1059,6 +1074,9 @@ form:has(.accept:checked) .cta-button {
   max-width: 320px;
   height: 100vh;
   background-color: #ffffff;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .catalog_header {
